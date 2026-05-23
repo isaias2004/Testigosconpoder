@@ -1,0 +1,177 @@
+<!-- facil.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Modo Fácil</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<section class="pantalla activa">
+
+  <div class="contenedor cuestionario">
+
+    <h1>TEST - MODO FÁCIL</h1>
+
+    <form id="quizForm">
+
+      <!-- PREGUNTAS -->
+      <div class="pregunta">
+        <p>1. ¿Te gusta trabajar en equipo?</p>
+
+        <input type="radio" id="p1a" name="p1" value="10">
+        <label for="p1a">Sí</label>
+
+        <input type="radio" id="p1b" name="p1" value="5">
+        <label for="p1b">A veces</label>
+
+        <input type="radio" id="p1c" name="p1" value="0">
+        <label for="p1c">No</label>
+      </div>
+
+      <div class="pregunta">
+        <p>2. ¿Te considerás responsable?</p>
+
+        <input type="radio" id="p2a" name="p2" value="10">
+        <label for="p2a">Sí</label>
+
+        <input type="radio" id="p2b" name="p2" value="5">
+        <label for="p2b">Más o menos</label>
+
+        <input type="radio" id="p2c" name="p2" value="0">
+        <label for="p2c">No</label>
+      </div>
+
+      <div class="pregunta">
+        <p>3. ¿Te gusta aprender cosas nuevas?</p>
+
+        <input type="radio" id="p3a" name="p3" value="10">
+        <label for="p3a">Sí</label>
+
+        <input type="radio" id="p3b" name="p3" value="5">
+        <label for="p3b">A veces</label>
+
+        <input type="radio" id="p3c" name="p3" value="0">
+        <label for="p3c">No</label>
+      </div>
+
+      <div class="pregunta">
+        <p>4. ¿Sabés resolver problemas?</p>
+
+        <input type="radio" id="p4a" name="p4" value="10">
+        <label for="p4a">Sí</label>
+
+        <input type="radio" id="p4b" name="p4" value="5">
+        <label for="p4b">Algunas veces</label>
+
+        <input type="radio" id="p4c" name="p4" value="0">
+        <label for="p4c">No</label>
+      </div>
+
+      <div class="pregunta">
+        <p>5. ¿Te adaptás rápido?</p>
+
+        <input type="radio" id="p5a" name="p5" value="10">
+        <label for="p5a">Sí</label>
+
+        <input type="radio" id="p5b" name="p5" value="5">
+        <label for="p5b">Depende</label>
+
+        <input type="radio" id="p5c" name="p5" value="0">
+        <label for="p5c">No</label>
+      </div>
+
+      <div class="pregunta">
+        <p>6. ¿Sos organizado?</p>
+
+        <input type="radio" id="p6a" name="p6" value="10">
+        <label for="p6a">Sí</label>
+
+        <input type="radio" id="p6b" name="p6" value="5">
+        <label for="p6b">A veces</label>
+
+        <input type="radio" id="p6c" name="p6" value="0">
+        <label for="p6c">No</label>
+      </div>
+
+      <div class="pregunta">
+        <p>7. ¿Mantenés la calma bajo presión?</p>
+
+        <input type="radio" id="p7a" name="p7" value="10">
+        <label for="p7a">Sí</label>
+
+        <input type="radio" id="p7b" name="p7" value="5">
+        <label for="p7b">Más o menos</label>
+
+        <input type="radio" id="p7c" name="p7" value="0">
+        <label for="p7c">No</label>
+      </div>
+
+      <div class="pregunta">
+        <p>8. ¿Te gusta ayudar a otros?</p>
+
+        <input type="radio" id="p8a" name="p8" value="10">
+        <label for="p8a">Sí</label>
+
+        <input type="radio" id="p8b" name="p8" value="5">
+        <label for="p8b">A veces</label>
+
+        <input type="radio" id="p8c" name="p8" value="0">
+        <label for="p8c">No</label>
+      </div>
+
+      <div class="pregunta">
+        <p>9. ¿Escuchás opiniones diferentes?</p>
+
+        <input type="radio" id="p9a" name="p9" value="10">
+        <label for="p9a">Sí</label>
+
+        <input type="radio" id="p9b" name="p9" value="5">
+        <label for="p9b">Algunas veces</label>
+
+        <input type="radio" id="p9c" name="p9" value="0">
+        <label for="p9c">No</label>
+      </div>
+
+      <div class="pregunta">
+        <p>10. ¿Te esforzás por mejorar?</p>
+
+        <input type="radio" id="p10a" name="p10" value="10">
+        <label for="p10a">Sí</label>
+
+        <input type="radio" id="p10b" name="p10" value="5">
+        <label for="p10b">A veces</label>
+
+        <input type="radio" id="p10c" name="p10" value="0">
+        <label for="p10c">No</label>
+      </div>
+
+      <button type="button" onclick="calcularResultado()">
+  FINALIZAR TEST
+</button>
+
+<a href="index.html" class="volver-btn">
+  Volver a elegir dificultad
+</a>
+
+    </form>
+
+    <div id="resultado" class="resultado"></div>
+
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
