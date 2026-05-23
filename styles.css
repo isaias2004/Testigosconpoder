@@ -16,16 +16,11 @@ body{
     #C32116 100%
   );
 
-  
-  scrollbar-width:none;
   color:white;
-  width:100vw;
-  height:100vh;
 
-  display:flex;
-  justify-content:center;
+  min-height:100vh;
 
-  align-items:center;
+  overflow-x:hidden;
 }
 
 body::-webkit-scrollbar{
@@ -33,19 +28,27 @@ body::-webkit-scrollbar{
 }
 
 .pantalla{
-  width:100vw;
-  height:100vh;
+  width:100%;
+
+  min-height:100vh;
+
   display:none;
+
   justify-content:center;
+
   align-items:center;
+
   text-align:center;
+
+  padding:40px 20px;
 }
 
 .pantalla.activa{
   display:flex;
-  flex-direction: column;
-  gap: 40px;
+
+  flex-direction:column;
 }
+
 
 .logo{
   width:200px;
@@ -274,4 +277,57 @@ button:hover{
   background:rgba(255,255,255,0.15);
 
   transform:scale(1.02);
+}
+
+/* ========================= */
+/* RESPONSIVE CELULAR */
+/* ========================= */
+
+@media (max-width: 768px){
+
+  body{
+    padding:20px;
+    height:auto;
+    min-height:100vh;
+  }
+
+  .pantalla{
+    padding:20px 0;
+  }
+
+  .logo{
+    width:220px;
+    margin-bottom:25px;
+  }
+
+  .contenedor{
+    width:100%;
+
+    padding:30px 20px;
+  }
+
+  .contenedor h1{
+    font-size:28px;
+    line-height:1.2;
+  }
+
+  .contenedor-dificultad{
+    flex-direction:column;
+
+    align-items:center;
+
+    width:100%;
+  }
+
+  .contenedor-dificultad a{
+    width:100%;
+    max-width:260px;
+
+    margin:8px 0;
+  }
+
+  .contenedor-dificultad h2{
+    font-size:20px;
+  }
+
 }
