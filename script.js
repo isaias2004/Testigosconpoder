@@ -1,48 +1,10 @@
 // script.js
 
-function abrirPantalla(id){
-
-  let pantallas = document.querySelectorAll(".pantalla");
-
-  pantallas.forEach(p => {
-    p.classList.remove("activa");
-  });
-
-  document.getElementById(id).classList.add("activa");
-}
-
-function volverInicio(){
-
-  let pantallas = document.querySelectorAll(".pantalla");
-
-  pantallas.forEach(p => {
-    p.classList.remove("activa");
-  });
-
-  document.getElementById("inicio").classList.add("activa");
-}
-
-function mostrarMensaje(texto){
-
-  let popup = document.getElementById("popup");
-  let mensaje = document.getElementById("mensajePopup");
-
-  mensaje.innerText = texto;
-
-  popup.style.display = "block";
-
-  setTimeout(() => {
-    popup.style.display = "none";
-  }, 2500);
-}
-
-// AGREGAR A script.js
-
 function calcularResultado(){
 
   let total = 0;
 
-  for(let i = 1; i <= 10; i++){
+  for(let i = 1; i <= 8; i++){
 
     let respuesta = document.querySelector(`input[name="p${i}"]:checked`);
 
@@ -56,25 +18,91 @@ function calcularResultado(){
 
   let resultado = document.getElementById("resultado");
 
-  if(total < 50){
+  // MOSTRAR POPUP
+  resultado.classList.add("mostrar");
+
+  if(total < 80){
 
     resultado.innerHTML = `
-      PUNTAJE: ${total}<br>
-      DESAPROBADO
+      <div class="resultado-card">
+
+        <h2>PUNTAJE: ${total}%</h2>
+
+        <p>
+          AUN PODÉS CAPACITARTE EN EVANGELISMO
+          Y GANAR MUCHAS ALMAS PARA CRISTO.
+        </p>
+
+        <p>
+          ESTOS TEMAS Y MUCHOS MÁS LOS APRENDERÁS
+          EN LAS DISTINTAS CARRERAS DE EMUBA.
+        </p>
+
+        <button onclick="cerrarResultado()">
+          CERRAR
+        </button>
+
+      </div>
     `;
 
-  }else if(total >= 50 && total <= 70){
+  } else if (total >= 50 && total < 80){
 
     resultado.innerHTML = `
-      PUNTAJE: ${total}<br>
-      REGULAR
+      <div class="resultado-card amarillo">
+
+        <h2>PUNTAJE: ${total}%</h2>
+
+        <p>
+          ¡FELICITACIONES!
+        </p>
+
+        <p>
+          AHORA TE TOCA SEGUIR CRECIENDO Y DESCUBRIR
+          CÓMO Y DÓNDE DIOS QUIERE USARTE CON PODER.
+        </p>
+
+        <p>
+          TE ESPERAMOS EN LAS DISTINTAS
+          CARRERAS DE EMUBA.
+        </p>
+
+        <button onclick="cerrarResultado()">
+          CERRAR
+        </button>
+
+      </div>
     `;
-
-  }else{
+  } else {
 
     resultado.innerHTML = `
-      PUNTAJE: ${total}<br>
-      APROBADO
+      <div class="resultado-card verde">
+
+        <h2>PUNTAJE: ${total}%</h2>
+
+        <p>
+          ¡FELICITACIONES!
+        </p>
+
+        <p>
+          HAS DEMOSTRADO UN GRAN COMPROMISO CON TU FE.
+        </p>
+
+        <p>
+          TE ESPERAMOS EN LAS DISTINTAS
+          CARRERAS DE EMUBA.
+        </p>
+
+        <button onclick="cerrarResultado()">
+          CERRAR
+        </button>
+
+      </div>
     `;
   }
+}
+
+function cerrarResultado(){
+
+  document.getElementById("resultado")
+  .classList.remove("mostrar");
 }

@@ -45,15 +45,15 @@ body::-webkit-scrollbar{
 
 .pantalla.activa{
   display:flex;
-
   flex-direction:column;
+  margin: 0;
 }
 
 
 .logo{
-  width:200px;
+  width:300px;
   object-fit:contain;
-  margin-bottom:20px;
+  margin:10px;
   animation: flotar 3s ease-in-out infinite;
   filter: drop-shadow(0 8px 20px rgba(0,0,0,0.25));
 }
@@ -88,6 +88,13 @@ body::-webkit-scrollbar{
     text-transform: uppercase;
 }
 
+.contenedor h3{
+    font-size:20px;
+    margin-bottom:20px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
 
 .contenedor-dificultad{
     display:flex;
@@ -110,15 +117,27 @@ body::-webkit-scrollbar{
     transition:0.3s;
 }
 
+.facil{
+    background:#4CAF50;
+}
+
+.medio{
+    background:#FFC107;
+}
+
+.dificil{
+    background:#ff1100;
+}
+
 .contenedor-dificultad h2{
     font-size:24px;
-    font-weight: 200;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
 .contenedor-dificultad a:hover{
     transform:scale(1.05); 
-    color: #b8b8b8;
+    color: #474747;
 }
 
 h1{
@@ -131,11 +150,6 @@ p{
   color:#bdbdbd;
 }
 
-.logo{
-  width:260px;
-  margin-bottom:20px;
-}
-
 .cuestionario{
   width:100%;
   max-width:900px;
@@ -143,6 +157,17 @@ p{
   padding:20px 40px;
 
   overflow-y:auto;
+}
+
+.cuestionario h1{
+  font-size:32px;
+  padding: 20px;
+}
+
+.cuestionario h2{
+  font-size:25px;
+  margin-bottom:70px;
+  text-transform: uppercase;
 }
 
 .pregunta{
@@ -223,13 +248,30 @@ button:hover{
 }
 
 .resultado{
-  margin-top:30px;
 
-  text-align:center;
+  position:fixed;
+  font-size: 25px;
 
-  font-size:30px;
+  top:0;
+  left:0;
 
-  font-weight:700;
+  width:100vw;
+  height:100vh;
+
+  background:rgba(0,0,0,0.6);
+
+  backdrop-filter:blur(8px);
+
+  display:none;
+
+  justify-content:center;
+  align-items:center;
+
+  z-index:9999;
+}
+
+.resultado.mostrar{
+  display:flex;
 }
 
 .pregunta input[type="radio"]:checked + label{
@@ -277,6 +319,22 @@ button:hover{
   background:rgba(255,255,255,0.15);
 
   transform:scale(1.02);
+}
+
+/* RESULTADO AMARILLO */
+.resultado-card.amarillo h2{
+  color:#ffd54a;
+}
+
+/* RESULTADO VERDE */
+.resultado-card.verde h2{
+  color:#4ade80;
+}
+
+.resultado-card p{
+  color:white;
+  font-weight: 100;
+  font-size:18px;
 }
 
 /* ========================= */
