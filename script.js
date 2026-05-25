@@ -4,38 +4,45 @@ function calcularResultado(){
 
   let total = 0;
 
+  // RECORRE LAS 8 PREGUNTAS
   for(let i = 1; i <= 8; i++){
 
     let respuesta = document.querySelector(`input[name="p${i}"]:checked`);
 
+    // VALIDAR QUE TODAS ESTÉN RESPONDIDAS
     if(!respuesta){
+
       alert("Respondé todas las preguntas.");
+
       return;
     }
 
     total += parseInt(respuesta.value);
   }
 
+  // CALCULAR PORCENTAJE
+let porcentaje = Math.round((total / 8) * 100);
+
   let resultado = document.getElementById("resultado");
 
-  // MOSTRAR POPUP
+  // MOSTRAR MODAL
   resultado.classList.add("mostrar");
 
-  if(total < 80){
+  // =========================
+  // DESAPROBADO
+  // =========================
+
+  if(porcentaje < 50){
 
     resultado.innerHTML = `
-      <div class="resultado-card">
 
-        <h2>PUNTAJE: ${total}%</h2>
+      <div class="resultado-card rojo">
 
-        <p>
-          AUN PODÉS CAPACITARTE EN EVANGELISMO
-          Y GANAR MUCHAS ALMAS PARA CRISTO.
-        </p>
+        <h2>PUNTAJE: ${porcentaje}%</h2>
 
         <p>
-          ESTOS TEMAS Y MUCHOS MÁS LOS APRENDERÁS
-          EN LAS DISTINTAS CARRERAS DE EMUBA.
+          AUN PODES CAPACITARTE EN EVANGELISMO Y GANAR MUCHAS ALMAS PARA CRISTO !!
+          ESTOS TEMAS Y MUCHOS MAS LOS APRENDERAS EN LAS DISTINTAS CARRERAS DE EMUBA
         </p>
 
         <button onclick="cerrarResultado()">
@@ -45,25 +52,27 @@ function calcularResultado(){
       </div>
     `;
 
-  } else if (total >= 50 && total < 80){
+  }
+
+  // =========================
+  // REGULAR
+  // =========================
+
+  else if(porcentaje >= 50 && porcentaje < 80){
 
     resultado.innerHTML = `
+
       <div class="resultado-card amarillo">
 
-        <h2>PUNTAJE: ${total}%</h2>
+        <h2>PUNTAJE: ${porcentaje}%</h2>
 
         <p>
-          ¡FELICITACIONES!
+          ¡VAS MUY BIEN!
         </p>
 
         <p>
-          AHORA TE TOCA SEGUIR CRECIENDO Y DESCUBRIR
-          CÓMO Y DÓNDE DIOS QUIERE USARTE CON PODER.
-        </p>
-
-        <p>
-          TE ESPERAMOS EN LAS DISTINTAS
-          CARRERAS DE EMUBA.
+          AUN PODES CAPACITARTE EN EVANGELISMO Y GANAR MUCHAS ALMAS PARA CRISTO !!
+          ESTOS TEMAS Y MUCHOS MAS LOS APRENDERAS EN LAS DISTINTAS CARRERAS DE EMUBA
         </p>
 
         <button onclick="cerrarResultado()">
@@ -72,24 +81,28 @@ function calcularResultado(){
 
       </div>
     `;
-  } else {
+  }
+
+  // =========================
+  // APROBADO
+  // =========================
+
+  else{
 
     resultado.innerHTML = `
+
       <div class="resultado-card verde">
 
-        <h2>PUNTAJE: ${total}%</h2>
+        <h2>PUNTAJE: ${porcentaje}%</h2>
 
         <p>
           ¡FELICITACIONES!
         </p>
 
         <p>
-          HAS DEMOSTRADO UN GRAN COMPROMISO CON TU FE.
-        </p>
-
-        <p>
-          TE ESPERAMOS EN LAS DISTINTAS
-          CARRERAS DE EMUBA.
+          ¡FELICITACIONES! AHORA TE TOCA SEGUIR CRECIENDO
+          Y DESCUBRIR COMO Y DONDE DIOS QUIERE USARTE CON
+          PODER A TRAVES DE LAS DISTINTAS CARRERAS DE EMUBA. TE ESPERAMOS
         </p>
 
         <button onclick="cerrarResultado()">
@@ -101,8 +114,11 @@ function calcularResultado(){
   }
 }
 
+// CERRAR MODAL
+
 function cerrarResultado(){
 
-  document.getElementById("resultado")
-  .classList.remove("mostrar");
+  document
+    .getElementById("resultado")
+    .classList.remove("mostrar");
 }
