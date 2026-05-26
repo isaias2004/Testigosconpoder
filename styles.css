@@ -159,6 +159,11 @@ p{
   overflow-y:auto;
 }
 
+strong{
+  color:white;
+  font-weight:600;
+}
+
 .cuestionario h1{
   font-size:32px;
   padding: 20px;

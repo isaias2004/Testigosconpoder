@@ -41,8 +41,8 @@ let porcentaje = Math.round((total / 8) * 100);
         <h2>PUNTAJE: ${porcentaje}%</h2>
 
         <p>
-          AUN PODES CAPACITARTE EN EVANGELISMO Y GANAR MUCHAS ALMAS PARA CRISTO !!
-          ESTOS TEMAS Y MUCHOS MAS LOS APRENDERAS EN LAS DISTINTAS CARRERAS DE EMUBA
+          AÚN PODES CAPACITARTE EN <strong>EVANGELISMO</strong> Y GANAR MUCHAS ALMAS PARA CRISTO !!
+          ESTOS TEMAS Y MUCHOS MAS LOS APRENDERÁS EN LAS DISTINTAS <strong>CARRERAS DE EMUBA</strong>
         </p>
 
         <button onclick="cerrarResultado()">
@@ -65,14 +65,9 @@ let porcentaje = Math.round((total / 8) * 100);
       <div class="resultado-card amarillo">
 
         <h2>PUNTAJE: ${porcentaje}%</h2>
-
         <p>
-          ¡VAS MUY BIEN!
-        </p>
-
-        <p>
-          AUN PODES CAPACITARTE EN EVANGELISMO Y GANAR MUCHAS ALMAS PARA CRISTO !!
-          ESTOS TEMAS Y MUCHOS MAS LOS APRENDERAS EN LAS DISTINTAS CARRERAS DE EMUBA
+          AÚN PODES CAPACITARTE EN <strong>EVANGELISMO</strong> Y GANAR MUCHAS ALMAS PARA CRISTO !!
+          ESTOS TEMAS Y MUCHOS MAS LOS APRENDERÁS EN LAS DISTINTAS <strong>CARRERAS DE EMUBA</strong>
         </p>
 
         <button onclick="cerrarResultado()">
@@ -96,13 +91,13 @@ let porcentaje = Math.round((total / 8) * 100);
         <h2>PUNTAJE: ${porcentaje}%</h2>
 
         <p>
-          ¡FELICITACIONES!
+          <strong>¡FELICITACIONES!</strong>
         </p>
 
         <p>
-          ¡FELICITACIONES! AHORA TE TOCA SEGUIR CRECIENDO
-          Y DESCUBRIR COMO Y DONDE DIOS QUIERE USARTE CON
-          PODER A TRAVES DE LAS DISTINTAS CARRERAS DE EMUBA. TE ESPERAMOS
+          AHORA TE TOCA SEGUIR CRECIENDO
+          Y DESCUBRIR <strong>COMO Y DÓNDE DIOS QUIERE USARTE CON
+          PODER</strong> A TRAVÉS DE LAS DISTINTAS CARRERAS DE EMUBA. <strong>TE ESPERAMOS</strong>
         </p>
 
         <button onclick="cerrarResultado()">
